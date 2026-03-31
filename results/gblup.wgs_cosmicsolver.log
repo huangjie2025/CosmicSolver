@@ -1,0 +1,100 @@
+Building G-inverse matrix from genotype...
+Inverting G matrix with Bending/Ridge...
+Starting Eigen::SelfAdjointEigenSolver...
+Eigen::SelfAdjointEigenSolver finished.
+#=============================================================#
+#                    WELCOME TO USE COSMICSOLVER              #
+#           Home: https://github.com/Pancosmic/Cosmic         #
+#       Software: Windows x86_64 v1.1.0                       #
+#     Developers: Jie Huang                                   #
+#=============================================================#
+Analysis started: Tue Mar 31 17:58:01 2026
+
+Commands:
+E:\PanOmics\MME\CosmicSolver_Release\cosmicsolver.exe \
+  --single-trait \
+  --pheno \
+  example\clean.phe.txt \
+  --pheno-pos \
+  10 \
+  --dcovar \
+  2,3,4,5 \
+  --qcovar \
+  7 \
+  --vce \
+  --vce-mode \
+  ai \
+  --threads \
+  1 \
+  --out \
+  results\gblup.wgs_cosmicsolver \
+  --bfile \
+  example\clean.wgs
+
+Program will be running on up to 1 threads.
+The log will be recorded in file [results\gblup.wgs_cosmicsolver.log].
+
+Derive GA matrix ...
+
+Total 1535 individuals will be predicted.
+
+No vars file provided. Using default initial variances (1.0, 1.0) for VCE.
+Loading phenotype file ...
+15396 individuals have been detected in file [example\clean.phe.txt].
+1530 effective records without missing will be used for analysis.
+
+Single Trait Model Fitted: 
+  y = Xb + Zu + e
+
+Make index matrix for fixed effects and covariates ...
+Make index matrix for random effects ...
+
+Total 2 variance components need to be estimated.
+Variance components estimation using: AI(20)
+Running ...
+Alg.	Iter.	LogL.	V(G)	V(e)
+[AI]	1	-1926.23	1.84483	3.21245
+[AI]	2	-1926.23	1.84704	3.21162
+[AI]	3	-1926.23	1.84708	3.21160
+[Converged?] Yes!
+
+Summary of estimated variances and heritability:
+       Var Var_SE     h2  h2_SE h2_Pr(Chisq)
+ GA 1.8471 0.2544 0.3651 0.0343       <2e-16
+  e 3.2116 0.1720 0.6349 0.0343       <2e-16
+Results of estimated variance components have been saved in the file [results\gblup.wgs_cosmicsolver.vars].
+
+Estimate fixed effects and random effects ...
+Summary of estimated coefficients:
+   Levels Estimation     SE
+       mu    13.3151 1.2007
+ parity_2     0.2114 0.1679
+ parity_3     0.2303 0.1702
+ parity_4     0.2163 0.1932
+ parity_5    -0.0955 0.2295
+ parity_6     0.2860 0.2374
+  herd_12    -0.6665 0.2092
+  herd_13    -0.6599 0.2176
+  herd_14     0.2317 0.2794
+  herd_15    -0.0178 0.2270
+  herd_16    -0.4459 0.2769
+  herd_17     0.1475 0.3078
+  herd_18    -0.6118 0.2390
+   herd_4    -1.4634 1.5855
+   herd_5     0.8675 1.1341
+       .          .      .
+       .          .      .
+       .          .      .
+       bw    -0.5718 0.1758
+Coefficients of all covariates and fixed effects are saved in file [results\gblup.wgs_cosmicsolver.beta].
+Random effects of all individuals are saved in file [results\gblup.wgs_cosmicsolver.rand].
+
+Analysis finished: Tue Mar 31 18:08:34 2026
+Total running time: 0h10m33s
+Peak Memory: 162 MB
+mics\MME\CosmicSolver_Release\results\gblup.wgs_cosmicsolver.beta].
+Random effects of all individuals are saved in file [E:\PanOmics\MME\CosmicSolver_Release\results\gblup.wgs_cosmicsolver.rand].
+
+Analysis finished: Tue Mar 31 18:06:48 2026
+Total running time: 0h10m39s
+Peak Memory: 162 MB

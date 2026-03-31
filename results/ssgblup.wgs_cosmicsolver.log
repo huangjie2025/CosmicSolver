@@ -1,0 +1,114 @@
+Loading pedigree file ...
+16122 unique individuals have been detected in file [example\clean.ped.txt].
+Computing Ainv using Henderson's method (direct sparse inverse)...
+Building G-inverse matrix from genotype...
+Extracting A22 block...
+Aligning G to A22...
+Mean of diagonal and Off-diagonal of A22: 1.01572 0.0554257
+Mean of diagonal and Off-diagonal of G: 1.00352 -0.000654182
+Alignment factors: a = 0.0560513, b = 0.956308
+Blending G with A22 (alpha = 0.05)...
+Inverting G matrix...
+Inverting A22 block...
+#=============================================================#
+#                    WELCOME TO USE COSMICSOLVER              #
+#           Home: https://github.com/Pancosmic/Cosmic         #
+#       Software: Windows x86_64 v1.1.0                       #
+#     Developers: Jie Huang                                   #
+#=============================================================#
+Analysis started: Tue Mar 31 18:01:49 2026
+
+Commands:
+E:\PanOmics\MME\CosmicSolver_Release\cosmicsolver.exe \
+  --single-trait \
+  --pheno \
+  example\clean.phe.txt \
+  --pheno-pos \
+  10 \
+  --dcovar \
+  2,3,4,5 \
+  --qcovar \
+  7 \
+  --vce \
+  --vce-mode \
+  ai \
+  --threads \
+  1 \
+  --out \
+  results\ssgblup.wgs_cosmicsolver \
+  --ped \
+  example\clean.ped.txt \
+  --bfile \
+  example\clean.wgs
+
+Program will be running on up to 1 threads.
+The log will be recorded in file [results\ssgblup.wgs_cosmicsolver.log].
+
+Derive HA matrix ...
+
+Total 16122 individuals will be predicted.
+
+No vars file provided. Using default initial variances (1.0, 1.0) for VCE.
+Loading phenotype file ...
+15396 individuals have been detected in file [example\clean.phe.txt].
+15356 effective records without missing will be used for analysis.
+
+Single Trait Model Fitted: 
+  y = Xb + Zu + e
+
+Make index matrix for fixed effects and covariates ...
+Make index matrix for random effects ...
+
+Total 2 variance components need to be estimated.
+Variance components estimation using: AI(20)
+Running ...
+Alg.	Iter.	LogL.	V(G)	V(e)
+[AI]	1	-22746.08	1.59339	2.30222
+[AI]	2	-22746.08	1.90766	3.06469
+[AI]	3	-22746.08	1.97243	3.38750
+[AI]	4	-22746.08	1.97462	3.42079
+[AI]	5	-22746.08	1.97498	3.42087
+[AI]	6	-22746.08	1.97498	3.42088
+[Converged?] Yes!
+
+Summary of estimated variances and heritability:
+       Var Var_SE     h2  h2_SE h2_Pr(Chisq)
+ HA 1.9750 0.1337 0.3660 0.0166       <2e-16
+  e 3.4209 0.0811 0.6340 0.0166       <2e-16
+Results of estimated variance components have been saved in the file [results\ssgblup.wgs_cosmicsolver.vars].
+
+Estimate fixed effects and random effects ...
+Using VCE solution as warm start for PCG...
+Using PCG to compute SE for 46 fixed effects...
+  ... 10/46 completed.
+  ... 20/46 completed.
+  ... 30/46 completed.
+  ... 40/46 completed.
+  ... 46/46 completed.
+Summary of estimated coefficients:
+   Levels Estimation     SE
+       mu    14.3687 0.8025
+ parity_2     0.1077 0.0538
+ parity_3     0.0799 0.0576
+ parity_4     0.1077 0.0657
+ parity_5    -0.0145 0.0792
+ parity_6     0.3089 0.0878
+  herd_10     0.0863 0.7538
+  herd_11    -0.0476 0.6894
+  herd_12    -0.5087 0.6887
+  herd_13    -0.2596 0.6890
+  herd_14    -0.1998 0.6878
+  herd_15    -0.2617 0.6872
+  herd_16    -0.2272 0.6878
+  herd_17     0.1075 0.6886
+  herd_18    -0.1480 0.6894
+       .          .      .
+       .          .      .
+       .          .      .
+       bw    -0.7349 0.0566
+Coefficients of all covariates and fixed effects are saved in file [results\ssgblup.wgs_cosmicsolver.beta].
+Random effects of all individuals are saved in file [results\ssgblup.wgs_cosmicsolver.rand].
+
+Analysis finished: Tue Mar 31 18:12:29 2026
+Total running time: 0h10m40s
+Peak Memory: 60 MB

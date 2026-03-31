@@ -1,0 +1,92 @@
+#=============================================================#
+#                    WELCOME TO USE HIBLUP                    #
+#           Home: www.hiblup.com                              #
+#       Software: Windows x86_64 v1.6.0 (2025-09-29 Release)  #
+#     Developers: Lilin Yin, Haohao Zhang and Xiaolei Liu     #
+#       Copyright (c) 2021-present. All rights reserved.      #
+#=============================================================#
+Analysis started: Tue Mar 31 17:54:22 2026
+Hostname: DESKTOP-0RRHH3J
+
+Commands:
+E:\HIBLUP\hiblup.exe \
+  --single-trait \
+  --pheno E:\PanOmics\MME\CosmicSolver_Release\example\clean.phe.txt \
+  --pheno-pos 10 \
+  --dcovar 2,3,4,5 \
+  --qcovar 7 \
+  --threads 1 \
+  --out E:\PanOmics\MME\CosmicSolver_Release\results\pblup_hiblup \
+  --pedigree E:\PanOmics\MME\CosmicSolver_Release\example\clean.ped.txt 
+
+Program will be running on up to 1 thread.
+The log will be recorded in file [E:\PanOmics\MME\CosmicSolver_Release\results\pblup_hiblup.log].
+
+Loading phenotype file ...
+15396 individuals have been detected in file [E:\PanOmics\MME\CosmicSolver_Release\example\clean.phe.txt].
+Loading pedigree file ...
+16122 unique individuals have been detected in file [E:\PanOmics\MME\CosmicSolver_Release\example\clean.ped.txt].
+
+15356 effective records without missing will be used for analysis.
+
+Single Trait Model Fitted:
+  bf115 = 1 + parity(F) + herd(F) + ys(F) + sex(F) + bw(C) + PA(R[G]) + e
+
+Make index matrix for fixed effects and covariates ...
+Make index matrix for random effects ...
+
+Derive PA matrix ...
+
+Total 16122 individuals will be predicted.
+
+Total 2 variance components need to be estimated.
+Variance components estimation using: AI(20)
+The matrix V has a dimension of 15356 x 15356.
+Running ...
+Alg.	Iter.	LogL.	V(PA)	V(e)
+[AI]	1	-19597.58	1.58788	3.59640	
+[AI]	2	-19573.54	1.85280	3.48617	
+[AI]	3	-19570.67	1.86799	3.48078	
+[AI]	4	-19570.67	1.86728	3.48119	
+[AI]	5	-19570.67	1.86732	3.48116	
+[Converged?] Yes!
+
+Summary of estimated variances and heritability:
+       Var Var_SE     h2  h2_SE h2_Pr(Chisq)
+ PA 1.8673 0.1292 0.3491 0.0202       <2e-16
+  e 3.4812 0.0816 0.6509 0.0202       <2e-16
+Results of estimated variance components have been saved in the file [E:\PanOmics\MME\CosmicSolver_Release\results\pblup_hiblup.vars].
+
+Estimate fixed effects and random effects ...
+Summary of estimated coefficients:
+   Levels Estimation     SE
+       mu    14.3638 0.7932
+ parity_2     0.1052 0.0542
+ parity_3     0.0696 0.0582
+ parity_4     0.0847 0.0665
+ parity_5    -0.0562 0.0801
+ parity_6     0.2792 0.0890
+  herd_10     0.0786 0.7547
+  herd_11    -0.0271 0.6901
+  herd_12    -0.4870 0.6894
+  herd_13    -0.2681 0.6897
+       .          .      . 
+       .          .      . 
+       .          .      . 
+   ys_184    -0.5237 0.3595
+    sex_2     0.3676 0.0352
+       bw    -0.7418 0.0569
+Coefficients of all covariates and fixed effects are saved in file [E:\PanOmics\MME\CosmicSolver_Release\results\pblup_hiblup.beta].
+Analysis of variance table:
+ Factors    Df SumSq MeanSq        F   Pr(>F)
+  parity     5    90     18   5.1922 0.000092
+    herd    17   417     25   7.0433   <2e-16
+      ys    21  7016    334  95.9785   <2e-16
+     sex     1   518    518 148.9266   <2e-16
+      bw     1   969    969 278.2147   <2e-16
+       e 15310 53297      3
+Analysis of variance table has been saved in file [E:\PanOmics\MME\CosmicSolver_Release\results\pblup_hiblup.anova].
+Random effects of all individuals are saved in file [E:\PanOmics\MME\CosmicSolver_Release\results\pblup_hiblup.rand].
+
+Analysis finished: Tue Mar 31 17:59:44 2026
+Total running time: 0h5m22s

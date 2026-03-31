@@ -1,0 +1,96 @@
+Loading pedigree file ...
+16122 unique individuals have been detected in file [example\clean.ped.txt].
+Computing Ainv using Henderson's method (direct sparse inverse)...
+#=============================================================#
+#                    WELCOME TO USE COSMICSOLVER              #
+#           Home: https://github.com/Pancosmic/Cosmic         #
+#       Software: Windows x86_64 v1.1.0                       #
+#     Developers: Jie Huang                                   #
+#=============================================================#
+Analysis started: Tue Mar 31 17:59:15 2026
+
+Commands:
+E:\PanOmics\MME\CosmicSolver_Release\cosmicsolver.exe \
+  --single-trait \
+  --pheno \
+  example\clean.phe.txt \
+  --pheno-pos \
+  10 \
+  --dcovar \
+  2,3,4,5 \
+  --qcovar \
+  7 \
+  --vce \
+  --vce-mode \
+  ai \
+  --threads \
+  1 \
+  --out \
+  results\pblup_cosmicsolver \
+  --ped \
+  example\clean.ped.txt
+
+Program will be running on up to 1 threads.
+The log will be recorded in file [results\pblup_cosmicsolver.log].
+
+Derive PA matrix ...
+
+Total 16122 individuals will be predicted.
+
+No vars file provided. Using default initial variances (1.0, 1.0) for VCE.
+Loading phenotype file ...
+15396 individuals have been detected in file [example\clean.phe.txt].
+15356 effective records without missing will be used for analysis.
+
+Single Trait Model Fitted: 
+  y = Xb + Zu + e
+
+Make index matrix for fixed effects and covariates ...
+Make index matrix for random effects ...
+
+Total 2 variance components need to be estimated.
+Variance components estimation using: AI(20)
+Running ...
+Alg.	Iter.	LogL.	V(G)	V(e)
+[AI]	1	-26657.82	1.50075	1.73715
+[AI]	2	-26657.82	1.83987	2.64958
+[AI]	3	-26657.82	1.87911	3.31186
+[AI]	4	-26657.82	1.86435	3.47672
+[AI]	5	-26657.82	1.86734	3.48115
+[AI]	6	-26657.82	1.86732	3.48117
+[Converged?] Yes!
+
+Summary of estimated variances and heritability:
+       Var Var_SE     h2  h2_SE h2_Pr(Chisq)
+ PA 1.8673 0.1292 0.3491 0.0166       <2e-16
+  e 3.4812 0.0816 0.6509 0.0166       <2e-16
+Results of estimated variance components have been saved in the file [results\pblup_cosmicsolver.vars].
+
+Estimate fixed effects and random effects ...
+Summary of estimated coefficients:
+   Levels Estimation     SE
+       mu    14.3638 0.7932
+ parity_2     0.1052 0.0542
+ parity_3     0.0696 0.0582
+ parity_4     0.0847 0.0665
+ parity_5    -0.0562 0.0801
+ parity_6     0.2792 0.0890
+  herd_10     0.0786 0.7547
+  herd_11    -0.0271 0.6901
+  herd_12    -0.4871 0.6894
+  herd_13    -0.2681 0.6897
+  herd_14    -0.2011 0.6884
+  herd_15    -0.2558 0.6879
+  herd_16    -0.2150 0.6885
+  herd_17     0.1125 0.6893
+  herd_18    -0.1407 0.6901
+       .          .      .
+       .          .      .
+       .          .      .
+       bw    -0.7418 0.0569
+Coefficients of all covariates and fixed effects are saved in file [results\pblup_cosmicsolver.beta].
+Random effects of all individuals are saved in file [results\pblup_cosmicsolver.rand].
+
+Analysis finished: Tue Mar 31 17:59:19 2026
+Total running time: 0h0m4s
+Peak Memory: 31 MB
