@@ -1,0 +1,104 @@
+Building G-inverse matrix from genotype...
+Inverting G matrix with Bending/Ridge...
+Starting Eigen::SelfAdjointEigenSolver...
+Eigen::SelfAdjointEigenSolver finished.
+#=============================================================#
+#                    WELCOME TO USE COSMICSOLVER              #
+#           Home: https://github.com/huangjie2025/CosmicSolver#
+#       Software: Linux x86_64 v1.1.0 (Release)               #
+#     Developers: Jie Huang                                   #
+#       Copyright (c) 2024-present. All rights reserved.      #
+#=============================================================#
+Analysis started: Fri Apr 03 17:20:58 2026
+
+Commands:
+cosmicsolver \
+  --single-trait \
+  --bfile \
+  example/clean.chip \
+  --pheno \
+  example/clean.phe.txt \
+  --pheno-pos \
+  10 \
+  --dcovar \
+  2,3,4,5 \
+  --qcovar \
+  7 \
+  --vce \
+  --vce-mode \
+  ai \
+  --threads \
+  1 \
+  --out \
+  results/LINUX/gblup.chip_cosmicsolver
+
+Program will be running on up to 1 threads.
+The log will be recorded in file [results/LINUX/gblup.chip_cosmicsolver.log].
+
+Derive GA matrix ...
+
+Total 1535 individuals will be predicted.
+
+No vars file provided. Using default initial variances (1.0, 1.0) for VCE.
+Loading phenotype file ...
+15396 individuals have been detected in file [example/clean.phe.txt].
+1530 effective records without missing will be used for analysis.
+
+Single Trait Model Fitted:
+  y = 1 + parity(F) + herd(F) + ys(F) + sex(F) + bw(C) + GA(R[G]) + e
+
+Make index matrix for fixed effects and covariates ...
+Make index matrix for random effects ...
+
+Total 2 variance components need to be estimated.
+Variance components estimation using: AI(20)
+Running ...
+Alg.	Iter.	LogL.	V(G)	V(e)
+[AI]	1	-1922.97	1.90832	3.16436
+[AI]	2	-1922.96	1.91311	3.16227
+[AI]	3	-1922.96	1.91316	3.16224
+[Converged?] Yes!
+
+Summary of estimated variances and heritability:
+       Var Var_SE     h2  h2_SE h2_Pr(Chisq)
+ GA 1.9132 0.2567 0.3769 0.0339       <2e-16
+  e 3.1622 0.1698 0.6231 0.0339       <2e-16
+Results of estimated variance components have been saved in the file [results/LINUX/gblup.chip_cosmicsolver.vars].
+
+Estimate fixed effects and random effects ...
+Summary of estimated coefficients:
+   Levels Estimation     SE
+       mu    13.1653 1.1904
+ parity_2     0.2069 0.1678
+ parity_3     0.2330 0.1695
+ parity_4     0.1948 0.1922
+ parity_5    -0.1042 0.2286
+ parity_6     0.3076 0.2371
+  herd_12    -0.6413 0.2084
+  herd_13    -0.6428 0.2170
+  herd_14     0.2616 0.2792
+  herd_15     0.0093 0.2261
+  herd_16    -0.4516 0.2762
+  herd_17     0.1630 0.3060
+  herd_18    -0.6143 0.2386
+   herd_4    -1.5699 1.5738
+   herd_5     0.8658 1.1272
+       .          .      .
+       .          .      .
+       .          .      .
+       bw    -0.5577 0.1750
+Analysis of variance table:
+Factors	Df	SumSq	MeanSq	F	Pr(>F)
+parity	5	14.6091	2.92183	0.923974	0.464336
+herd	12	111.04	9.2533	2.92619	0.000499647
+ys	19	223.786	11.7782	3.72464	1.09998e-07
+sex	1	29.8586	29.8586	9.44224	0.00215886
+bw	1	32.1276	32.1276	10.1598	0.00146517
+e	1491	4714.9	3.16224	.	.
+Analysis of variance table has been saved in file [results/LINUX/gblup.chip_cosmicsolver.anova].
+Coefficients of all covariates and fixed effects are saved in file [results/LINUX/gblup.chip_cosmicsolver.beta].
+Random effects of all individuals are saved in file [results/LINUX/gblup.chip_cosmicsolver.rand].
+
+Analysis finished: Fri Apr 03 17:22:52 2026
+Total running time: 0h1m53s
+Peak Memory: 449 MB

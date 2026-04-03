@@ -10,11 +10,22 @@ CosmicSolver is a high-performance Genomic Selection (GS) and Variance Component
 
 ## Getting Started
 
+### Prerequisites (Environment Setup)
+To ensure maximum performance and compatibility, especially for compiling from source or running benchmarks, we provide a Conda environment configuration file (`environment.yml`). You can set up the environment with:
+
+```bash
+# Create the Conda environment
+conda env create -f environment.yml
+
+# Activate the environment
+conda activate cosmicsolver
+```
+
 ### Installation
-CosmicSolver is distributed as a pre-compiled executable. No installation or compilation is required. Just download the `cosmicsolver.exe` binary.
+CosmicSolver is distributed as a pre-compiled executable for both Linux and Windows. No installation or compilation is required. Just download the `cosmicsolver` (Linux) or `cosmicsolver.exe` (Windows) binary from the release page.
 
 ### Example Usage
-We provide example datasets in the `example/` directory, including both standard CHIP arrays (23K SNPs) and high-density Whole Genome Sequencing (WGS, ~9M SNPs) data. You can find detailed run commands for PBLUP, GBLUP, and SSGBLUP in the `DEMO_COMMANDS.md` file.
+We provide example datasets in the `example/` directory (standard CHIP arrays with 23K SNPs). You can find detailed run commands for PBLUP, GBLUP, and SSGBLUP in the `DEMO_COMMANDS.md` file.
 
 You can run a quick test using the following command:
 

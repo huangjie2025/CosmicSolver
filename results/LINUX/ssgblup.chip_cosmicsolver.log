@@ -1,0 +1,124 @@
+Loading pedigree file ...
+16122 unique individuals have been detected in file [example/clean.ped.txt].
+Computing Ainv using Henderson's method (direct sparse inverse)...
+Building G-inverse matrix from genotype...
+Extracting A22 block...
+Aligning G to A22...
+Mean of diagonal and Off-diagonal of A22: 1.01572 0.0554257
+Mean of diagonal and Off-diagonal of G: 1.00041 -0.000652157
+Alignment factors: a = 0.0560513, b = 0.959279
+Blending G with A22 (alpha = 0.05)...
+Inverting G matrix...
+Inverting A22 block...
+#=============================================================#
+#                    WELCOME TO USE COSMICSOLVER              #
+#           Home: https://github.com/huangjie2025/CosmicSolver#
+#       Software: Linux x86_64 v1.1.0 (Release)               #
+#     Developers: Jie Huang                                   #
+#       Copyright (c) 2024-present. All rights reserved.      #
+#=============================================================#
+Analysis started: Fri Apr 03 17:22:53 2026
+
+Commands:
+cosmicsolver \
+  --single-trait \
+  --ped \
+  example/clean.ped.txt \
+  --bfile \
+  example/clean.chip \
+  --pheno \
+  example/clean.phe.txt \
+  --pheno-pos \
+  10 \
+  --dcovar \
+  2,3,4,5 \
+  --qcovar \
+  7 \
+  --vce \
+  --vce-mode \
+  ai \
+  --threads \
+  1 \
+  --out \
+  results/LINUX/ssgblup.chip_cosmicsolver
+
+Program will be running on up to 1 threads.
+The log will be recorded in file [results/LINUX/ssgblup.chip_cosmicsolver.log].
+
+Derive HA matrix ...
+
+Total 16122 individuals will be predicted.
+
+No vars file provided. Using default initial variances (1.0, 1.0) for VCE.
+Loading phenotype file ...
+15396 individuals have been detected in file [example/clean.phe.txt].
+15356 effective records without missing will be used for analysis.
+
+Single Trait Model Fitted:
+  y = 1 + parity(F) + herd(F) + ys(F) + sex(F) + bw(C) + HA(R[G]) + e
+
+Make index matrix for fixed effects and covariates ...
+Make index matrix for random effects ...
+
+Total 2 variance components need to be estimated.
+Variance components estimation using: AI(20)
+Running ...
+Alg.	Iter.	LogL.	V(G)	V(e)
+[AI]	1	-22761.26	1.59346	2.30293
+[AI]	2	-22761.26	1.91350	3.06254
+[AI]	3	-22761.26	1.98226	3.38320
+[AI]	4	-22761.26	1.98498	3.41616
+[AI]	5	-22761.26	1.98536	3.41623
+[AI]	6	-22761.26	1.98535	3.41623
+[Converged?] Yes!
+
+Summary of estimated variances and heritability:
+       Var Var_SE     h2  h2_SE h2_Pr(Chisq)
+ HA 1.9854 0.1340 0.3675 0.0166       <2e-16
+  e 3.4162 0.0811 0.6325 0.0166       <2e-16
+Results of estimated variance components have been saved in the file [results/LINUX/ssgblup.chip_cosmicsolver.vars].
+
+Estimate fixed effects and random effects ...
+Using VCE solution as warm start for PCG...
+Using PCG to compute SE for 46 fixed effects...
+  ... 10/46 completed.
+  ... 20/46 completed.
+  ... 30/46 completed.
+  ... 40/46 completed.
+  ... 46/46 completed.
+Summary of estimated coefficients:
+   Levels Estimation     SE
+       mu    14.3653 0.8026
+ parity_2     0.1073 0.0538
+ parity_3     0.0819 0.0576
+ parity_4     0.1052 0.0657
+ parity_5    -0.0169 0.0792
+ parity_6     0.3099 0.0878
+  herd_10     0.0825 0.7538
+  herd_11    -0.0483 0.6894
+  herd_12    -0.5015 0.6887
+  herd_13    -0.2568 0.6890
+  herd_14    -0.1988 0.6878
+  herd_15    -0.2596 0.6873
+  herd_16    -0.2263 0.6879
+  herd_17     0.1099 0.6887
+  herd_18    -0.1480 0.6894
+       .          .      .
+       .          .      .
+       .          .      .
+       bw    -0.7312 0.0566
+Analysis of variance table:
+Factors	Df	SumSq	MeanSq	F	Pr(>F)
+parity	5	57.0353	11.4071	3.33908	0.0051313
+herd	17	253.379	14.9047	4.36289	4.32276e-09
+ys	21	2904.11	138.291	40.4805	<2e-16
+sex	1	386.387	386.387	113.103	<2e-16
+bw	1	570.523	570.523	167.004	<2e-16
+e	15310	52302.5	3.41623	.	.
+Analysis of variance table has been saved in file [results/LINUX/ssgblup.chip_cosmicsolver.anova].
+Coefficients of all covariates and fixed effects are saved in file [results/LINUX/ssgblup.chip_cosmicsolver.beta].
+Random effects of all individuals are saved in file [results/LINUX/ssgblup.chip_cosmicsolver.rand].
+
+Analysis finished: Fri Apr 03 17:25:16 2026
+Total running time: 0h2m22s
+Peak Memory: 2426 MB
